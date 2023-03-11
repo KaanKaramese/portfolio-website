@@ -3,7 +3,7 @@ const section2 = document.querySelector('.section2');
 const buttonsWrapper = document.querySelector(".map");
 const mapButtons = document.querySelectorAll(".map button");
 const slides = document.querySelector(".inner");
-const prevSlide = document.querySelector('#prevBtn');
+const prevSlideBtn = document.querySelector('#prevBtn');
 const nextSlideBtn = document.querySelector('#nextBtn');
 let currentSlide = 0;
 let timeoutId;
@@ -33,7 +33,6 @@ function nextSlide() {
       item.classList.remove("active");
     }
   });
-  setTimeout(nextSlide, 5000);
 }
 
 timeoutId = setTimeout(nextSlide, 5000);
@@ -59,7 +58,7 @@ buttonsWrapper.addEventListener("click", e => {
   }
 });
 
-prevSlide.addEventListener("click", e => {
+prevSlideBtn.addEventListener("click", e => {
   if (e.target.nodeName === "IMG") {
     Array.from(buttonsWrapper.children).forEach(item =>
       item.classList.remove("active")
